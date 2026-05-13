@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c0s57q3fjjen3"]
+
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="1_cw2d6"]
+[ext_resource type="PackedScene" uid="uid://bpdj5njb8nhot" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_hand.tscn" id="1_v6fml"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_3li8b"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_mdl7e"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_bruh7"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_6eyey"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1696713805]
+
+[node name="PlayerBody" parent="." unique_id=947208937 instance=ExtResource("1_cw2d6")]
+player_calibrate_height = false
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=574990820]
+
+[node name="LeftHandController" type="XRController3D" parent="." unique_id=70175325]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHandController" unique_id=613855434 instance=ExtResource("1_v6fml")]
+
+[node name="FunctionPickup" parent="LeftHandController/LeftHand" unique_id=2067051313 instance=ExtResource("2_mdl7e")]
+grab_distance = 0.1
+
+[node name="MovementDirect" parent="LeftHandController" unique_id=2028090772 instance=ExtResource("5_bruh7")]
+strafe = true
+
+[node name="RightHandController" type="XRController3D" parent="." unique_id=1996469966]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHandController" unique_id=829587338 instance=ExtResource("2_3li8b")]
+
+[node name="FunctionPickup" parent="RightHandController/RightHand" unique_id=1055630046 instance=ExtResource("2_mdl7e")]
+grab_distance = 0.1
+
+[node name="MovementTurn" parent="RightHandController" unique_id=937642712 instance=ExtResource("7_6eyey")]
+turn_mode = 2
+smooth_turn_speed = 4.0
