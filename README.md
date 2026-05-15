@@ -12,4 +12,6 @@ If you aren't feeling old yet, congrats! You're probably going to break a bone t
 
 haha funny joke go burrr
 
-You need to use advanced techniques to figure out who's talking in this.
+You need to use advanced techniques to figure out who's talking in this.  
+  
+Btw, I don't think vr spell casting games count as "generic"
